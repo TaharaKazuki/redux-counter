@@ -5,18 +5,17 @@ import counter from './reducers/index';
 import { createStore } from 'redux';
 
 const store = createStore(counter);
-console.log(store);
 
 function render() {
-	ReactDOM.render(
-			<Counter
-				value={store.getState()}
-			  onIncrement={()=> store.dispatch({type:'INCREMENT'})}
-			  onDecrement={()=> store.dispatch({type:'DECREMENT'})}
-			/>,
-			document.getElementById('main')
-	);
+  ReactDOM.render(
+	<Counter
+	  value={store.getState()}
+	  onIncrement={()=> store.dispatch({type:'INCREMENT'})}
+	  onDecrement={()=> store.dispatch({type:'DECREMENT'})}
+	/>,
+	document.getElementById('main')
+  );
 }
 
 render();
-store.subscribe(render)　
+store.subscribe(render);
